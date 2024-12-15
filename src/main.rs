@@ -99,7 +99,7 @@ fn main() -> Result<(), Error> {
     let mut pick: i32;
 
     println!("Starting Powerball draws!");
-    for idx in 0..2000000 {
+    for idx in 0..3000000 {
         for n in 0..5 {
             index_key = rng.gen_range(0..pb_white_balls_size as u32);
             pick = pb_white_balls[index_key as usize];
