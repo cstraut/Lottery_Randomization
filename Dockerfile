@@ -2,7 +2,7 @@
 # lottery randomization build stage
 ########################################################################################################################
 
-FROM rust:1.83.0-slim AS build
+FROM rust:latest AS build
 
 RUN rustup target add x86_64-unknown-linux-musl && \
     apt update && \
@@ -28,7 +28,7 @@ RUN cargo build --target x86_64-unknown-linux-musl --release
 # lotter randomization image
 ########################################################################################################################
 
-FROM rust:183.0-slim
+FROM rust:latest
 
 COPY --from=build /etc/passwd /etc/passwd
 COPY --from=build /etc/group /etc/group
