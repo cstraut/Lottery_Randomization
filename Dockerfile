@@ -28,7 +28,7 @@ RUN cargo build --target x86_64-unknown-linux-musl --release
 # lotter randomization image
 ########################################################################################################################
 
-FROM rust:latest
+FROM ubuntu:latest
 
 COPY --from=build /etc/passwd /etc/passwd
 COPY --from=build /etc/group /etc/group
